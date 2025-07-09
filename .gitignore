@@ -1,5 +1,4 @@
 # Ignore data
-data/
 datasets/
 *.zip
 *.tar.gz
