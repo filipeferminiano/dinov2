@@ -1,0 +1,67 @@
+# ========================
+# ⚙️ Training Configuration
+# ========================
+training:
+  batch_size: 1024
+  epochs: 100
+  optimizer: adamw
+  learning_rate: 0.0005
+  weight_decay: 0.04
+  warmup_epochs: 10
+  scheduler: cosine
+  ema_momentum: 0.996
+  clip_grad: 3.0
+  use_mixed_precision: true
+  use_fsdp: true
+  save_every: 10  # epochs
+  checkpoint_dir: ./checkpoints
+
+# =====================
+# 🧠 Model Architecture
+# =====================
+model:
+  arch: vit_b_14           # Options: vit_s_14, vit_b_14, vit_l_14, vit_g_14
+  patch_size: 14
+  image_size: 224
+  hidden_dim: 768
+  mlp_dim: 3072
+  num_heads: 12
+  depth: 12
+  dropout_rate: 0.1
+  stochastic_depth: 0.2
+  use_flash_attention: true
+  use_sequence_packing: true
+  use_koleo_loss: true
+  sinkhorn_iterations: 3
+
+# ===============
+# 📦 Data Settings
+# ===============
+data:
+  train_path: ./data/curated/train
+  val_path: ./data/curated/val
+  image_size: 224
+  num_workers: 8
+  augmentation:
+    global_crops: 2
+    local_crops: 6
+    local_crop_scale: [0.05, 0.4]
+    global_crop_scale: [0.4, 1.0]
+
+# ==========================
+# 🧪 Evaluation Configuration
+# ==========================
+evaluation:
+  knn_k: 20
+  linear_probe_epochs: 50
+  linear_probe_lr: 0.01
+  eval_every: 5  # epochs
+
+# =================
+# 🧪 Distillation
+# =================
+distillation:
+  enabled: false
+  teacher_checkpoint: ./checkpoints/vit_g_14_teacher.pth
+  distill_loss: cross_entropy
+  distill_on_global_only: true

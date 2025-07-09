@@ -1,0 +1,32 @@
+# Core deep learning frameworks
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Vision Transformer utilities
+timm>=0.9.0
+
+# Fast similarity search
+faiss-gpu>=1.7.2
+
+# Efficient attention & sequence ops
+xformers>=0.0.22
+
+# Data handling & augmentations
+opencv-python
+numpy
+scikit-learn
+Pillow
+matplotlib
+tqdm
+pyyaml
+
+# Logging & experiment tracking
+wandb
+
+# Optional: mixed-precision and perf tuning
+nvidia-ml-py3
+psutil
+
+# Optional: Jupyter support (for colab or notebooks)
+jupyterlab

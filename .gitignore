@@ -1,0 +1,65 @@
+# Ignore data
+data/
+datasets/
+*.zip
+*.tar.gz
+*.tar
+*.rar
+
+# Checkpoints & outputs
+*.ckpt
+*.pt
+*.pth
+checkpoints/
+outputs/
+models/
+runs/
+wandb/
+
+# Logs and cache
+*.log
+*.out
+*.err
+*.tmp
+*.bak
+*.swp
+__pycache__/
+*.py[cod]
+.cache/
+.ipynb_checkpoints/
+
+# Environment & system
+.env
+.venv/
+env/
+venv/
+.DS_Store
+*.egg-info/
+*.egg
+*.idea/
+*.vscode/
+*.sqlite3
+*.db
+
+# Jupyter kernel & VSCode junk
+.ipynb_checkpoints/
+.vscode/
+.history/
+
+# Faiss indices
+*.index
+*.faiss
+*.npy
+*.npz
+
+# HuggingFace and timm caches
+~/.cache/
+~/.huggingface/
+~/.torch/
+
+# Others
+*.pkl
+*.jsonl
+*.jpg
+*.png
+*.webp
